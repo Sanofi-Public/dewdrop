@@ -44,9 +44,6 @@ The output files can later be used for training.
 
 Use `python -m run_inference_parallel` to perform inference leveraging multiple GPUs.
 
-# Additional Information
-The structure model is from [EquiFold](https://www.biorxiv.org/content/10.1101/2022.10.07.511322v1) [Repository](https://github.com/Genentech/equifold/tree/main). 
-
 ## Citations
 ```
 @article{Xue2024,
