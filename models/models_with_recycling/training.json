@@ -1,0 +1,17 @@
+{
+    "checkpoint_steps": 20,
+    "checkpoint_limit": -1,
+    "train_batch_size": 4,
+    "max_epochs": 2,
+    "strategy": "ddp_find_unused_parameters_true",
+    "log_every_n_steps": 5,
+    "train_drop_last": false,
+    "train_pin_memory": true,
+    "restart_from_ckpt": false,
+    "ckpt_file_path": "last",
+    "train_shuffle": true,
+    "train_num_workers": 0,
+    "save_last": true,
+    "save_on_train_epoch_end": true,
+    "unfreeze_layer_num": []
+}
