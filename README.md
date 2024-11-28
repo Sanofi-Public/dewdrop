@@ -21,11 +21,12 @@ $ pip install torch_scatter torch_cluster -f https://data.pyg.org/whl/torch-2.4.
 $ python -m ipykernel install --user --name NanoFold --display-name "Python (NanoFold)"
 ```
 
-### Configuration
-[config.ini](config.ini) contains high-level configuration for all steps in the model lifecycle, from preprocessing data to benchmarking the final model.
+### Model Weights and Configurations
+[configs/](configs/) contains .ini files which are high-level configuration for all steps in the model lifecycle, from preprocessing data to benchmarking the final model.
 Each section corresponds to a different step in the process.
 
 [models/](models/) contains checkpoints, model weights, and model configuration files that can be used for fine-tuning and inference.
+There are serveral model weights and configurations: the original Equifold version under `ab/`, the recycling version under `models_with_recycling/`, and nanobody finetuned version `nanobody_finetune_200`. For running retrospective experiment, we start with the original weight and configuration. 
 
 ### Data Preprocessing
 [data/](data/) contains code for pre-processing .csv and corresponding .pdb or .cif files into the correct format. 
@@ -33,8 +34,6 @@ If you want to run any training, you need to run `python data/prepare_pdb_1700.p
 After that, run `python data/equifold_process_input.py` to generate the dataset .pickle file, then run `python data/train_val_test_split.py` for dataset splitting. The `preprocessing` section in `config.ini` should point to the corresponding files and directories.
 The output files can later be used for training.
 
-### Included Weights & configuration
-[models/](models/) contains a couple version of model weights and configurations: the original Equifold version under `ab/`, the recycling version under `models_with_recycling/`, and nanobody finetuned version `nanobody_finetune_200`. For running retrospective experiment, we start with the original weight and configuration. 
 
 ### Run retrospective experiments
 [al_selection](al_selection/) contains scripts for different strategies. After processing the data and curated the configuration file, call `python -m al_selection.[name-of-script]` to perform experiments. All the training and validataion statistics are stored under `model_logs/[name-of-configuration]` with the name specified as in the configuration file. 
