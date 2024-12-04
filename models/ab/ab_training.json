@@ -1,0 +1,24 @@
+{
+    "run_name": "6_28_run_2",
+    "id": "v1",
+    "save_dir": "model_logs",
+    "checkpoint_steps": 11,
+    "checkpoint_limit": -1,
+    "train_batch_size": 4,
+    "max_epochs": 50,
+    "strategy": "ddp_find_unused_parameters_true",
+    "log_every_n_steps": 11,
+    "train_drop_last": false,
+    "train_pin_memory": true,
+    "restart_from_ckpt": false,
+    "ckpt_name": "epoch=14-step=450.ckpt",
+    "train_shuffle": true,
+    "train_num_workers": 0,
+    "train_dataset_path": "./data/equifold_ext_and_int_nb_train_dataset.pickle",
+    "validation_dataset_path": "./data/equifold_ext_and_int_nb_validation_dataset.pickle",
+    "test_dataset_path": "./data/equifold_ext_and_int_nb_test_dataset.pickle",
+    "unfreeze_layer_num": [
+        4,
+        5
+    ]
+}
